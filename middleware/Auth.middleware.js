@@ -9,6 +9,7 @@ const auth = (req, res, next) => {
         else if (decoded) {
           req.body.userID = decoded.userID;
           req.body.userName = decoded.userName;
+          req.body.userAv = decoded.userAv;
           next();
         }
       });

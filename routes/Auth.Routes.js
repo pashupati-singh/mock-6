@@ -38,7 +38,7 @@ authRoutes.post("/login", async (req, res) => {
         if (err) return res.json({ msg: err });
         else if (result) {
           jwt.sign(
-            { userID: user._id, userName: user.userName },
+            { userID: user._id, userName: user.userName, userAv: user.avatar },
             process.env.SKEY,
             (err, token) => {
               if (err) return res.json({ msg: err });
